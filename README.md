@@ -2,13 +2,13 @@
 1) Создайте Java проект
 2) Импортируйте Jar файл TGSaver в ваш проект как библиотеку.
 3) Создайте и вставьте в файл по пути: ```src/main/resources/Config.ysc``` следующие строчки:
-```
+```yscript
 class = "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin"
 ```
 * Где: "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin" - путь до вашего  "main" класса
 
 4) Вставьте в ваш Main класс следующие функции:
-```
+```java
 public class TestPlugin {
     @Override
     public void execute(PluginAPI api){
