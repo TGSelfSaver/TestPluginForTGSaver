@@ -9,7 +9,7 @@ class = "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin"
 
 4) Вставьте в ваш Main класс следующие функции:
 ```java
-public class TestPlugin {
+public class TestPlugin implements PluginLoader.Plugin {
     @Override
     public void execute(PluginAPI api){
 
