@@ -34,7 +34,9 @@
         <dependency>
             <groupId>ru.yoricya.tgauto</groupId>
             <artifactId>TGAuto</artifactId>
-            <version>2.0_23YJune14</version>
+            <version>1</version>
+            <systemPath>${project.basedir}/TGAuto-2.0_Beta-3.jar</systemPath>
+            <scope>system</scope>
         </dependency>
     </dependencies>
 </project>

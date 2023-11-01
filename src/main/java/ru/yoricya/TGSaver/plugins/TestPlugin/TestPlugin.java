@@ -15,14 +15,15 @@ public class TestPlugin implements PluginLoader.Plugin {
         this.api = api;
         el = new PluginAPI.EventListener() {
             @Override
-            public void onEvent(PluginAPI.Event event) {
-                if(event.EventType == MESSAGE_TEXT_EVENT){
+            public PluginAPI.Event onEvent(PluginAPI.Event event) {
+                if(event.EventType == MESSAGE_TEXT_EVENT && event.EventData != null){
                     String txt = ((TdApi.MessageText) event.EventData).text.text;
-                    Main.Logger.info("Новое сообщение:"+txt);
+                    api.getLogger().info("Новое сообщение:"+txt);
                 }
+                return event;
             }
         };
-        api.registerEventHandler(el);
+        api.registerEventHandler(this, el);
     }
     @Override
     public PluginLoader.PluginInfo pluginInfo(){
