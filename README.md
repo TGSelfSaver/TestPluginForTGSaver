@@ -18,7 +18,7 @@ versions.max = "-1"
 
 4) Вставьте в ваш Main класс следующий код:
 ```java
-public class TestPlugin implements PluginLoader.Plugin {
+public class TestPlugin extends PluginLoader.Plugin {
     @Override
     public void execute(PluginAPI api){
 
