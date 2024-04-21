@@ -11,7 +11,10 @@ plugin.class = "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin"
 versions.target = "8"
 versions.max = "-1"
 ```
-* Где: "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin" - путь до вашего  "main" класса
+* Где:
+* `plugin.class = "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin"` - путь до вашего  "main" класса
+* `versions.target = "8"` - Минимально совместимая версия TGSaver
+* `versions.max = "-1"` - Максимально совместимая версия TGSaver (`-1` - без ограничения)
 
 4) Вставьте в ваш Main класс следующий код:
 ```java
@@ -32,7 +35,7 @@ public class TestPlugin implements PluginLoader.Plugin {
 ```yscript
 class = "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin"
 ```
-* Где: "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin" - путь до вашего  "main" класса
+* Где: `"ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin"` - путь до вашего  "main" класса
 
 4) Вставьте в ваш Main класс следующий код:
 ```java
