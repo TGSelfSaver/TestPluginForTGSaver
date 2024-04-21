@@ -1,4 +1,31 @@
-# Как создать плагин?
+# Как создать плагин? (TGSaver >= 2.0.Beta-8)
+1) Создайте Java проект
+2) Импортируйте Jar файл TGSaver в ваш проект как библиотеку.
+3) Создайте и заполните конфигурационный файл по пути: ```src/main/resources/Config.ysc```
+```yscript
+plugin.versions.name = "1.0"
+plugin.versions.code = "1"
+plugin.name = "MyPlugin"
+plugin.description = "Sample Plugin"
+plugin.class = "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin"
+versions.target = "8"
+versions.max = "-1"
+```
+* Где: "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin" - путь до вашего  "main" класса
+
+4) Вставьте в ваш Main класс следующий код:
+```java
+public class TestPlugin implements PluginLoader.Plugin {
+    @Override
+    public void execute(PluginAPI api){
+
+    }
+}
+```
+* `execute(PluginAPI api)` - Основная функция к которой TGSaver обращается при загрузке плагина, сюда вставьте ваш код.
+5) Готово! Скомпилируйте плагин, и вставьте его в папку `plugins/` вашего TGSaver(-a)!
+
+# Как создать плагин? (TGSaver < 2.0.Beta-8)
 1) Создайте Java проект
 2) Импортируйте Jar файл TGSaver в ваш проект как библиотеку.
 3) Создайте и вставьте в файл по пути: ```src/main/resources/Config.ysc``` следующие строчки:
@@ -7,7 +34,7 @@ class = "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin"
 ```
 * Где: "ru.yoricya.TGSaver.plugins.TestPlugin.TestPlugin" - путь до вашего  "main" класса
 
-4) Вставьте в ваш Main класс следующие функции:
+4) Вставьте в ваш Main класс следующий код:
 ```java
 public class TestPlugin implements PluginLoader.Plugin {
     @Override
